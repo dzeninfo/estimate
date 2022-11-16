@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.table-description {
+  margin-top: 80px;
+  background-color: rgb(255, 255, 255);
+}
+.title {
+  /* font-size: 40px; */
+
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fff; */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.project-title {
+  font-size: 1.5em;
+}
+.button-add {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.button-add::after{
+  content:'';
+  position: absolute;
+  top: 3px;
+  left: 13px;
+  height: 80%;
+  width: 2px;
+  background-color: rgb(179, 179, 179);
+}
+.button-add::before{
+  content:'';
+  position: absolute;
+  top: 13px;
+  left: 2px;
+  height: 2px;
+  width: 83%;
+  background-color: rgb(179, 179, 179);
+}
+.button-add:hover{
+  box-shadow: 0 0 1px 12px rgba(0, 0, 0, 0.1);
+}
+.button-add:active{
+  transform: scale(0.9);
+}
