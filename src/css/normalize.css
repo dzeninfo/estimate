@@ -16,6 +16,7 @@ html {
 	padding: 0px;
 	margin: 0px;
 	border: 0px;
+  outline-color: #fdc264;
 }
 
 /* Sections
@@ -29,6 +30,7 @@ body {
   margin: 0;
   background-color: rgb(240, 240, 240);
 }
+
 
 /**
  * Render the `main` element consistently in IE.

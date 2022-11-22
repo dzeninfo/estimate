@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import NewProject from '../components/NewProject';
 
 function addProject() {

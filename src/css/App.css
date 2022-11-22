@@ -7,7 +7,7 @@
   padding: 0 15px;
 }
 .table-description {
-  margin-top: 80px;
+  margin-top: 120px;
   background-color: rgb(255, 255, 255);
 }
 .title {
@@ -19,9 +19,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 100px;
   padding: 0px 15px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   /* background-color: #fff; */
@@ -66,4 +67,35 @@
   min-height: 100px;
   margin: 0 auto;
   border: 3px solid #fff;
+}
+.project-name-input {
+  padding: 0 15px;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* .header__form {
+
+} */
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.login-form__input-box {
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+  text-align: left;
+    
+  /* display: flex;
+  flex-direction: column; */
+}
+.login-form__lable {
+  padding-left: 30px;
+  font-size: 10px;
+  display: block;
+}
+.login-form__input {
+  background-color: transparent;
+  outline: none;
+  padding-left: 15px;
 }
