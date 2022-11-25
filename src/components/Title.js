@@ -1,5 +1,13 @@
+import styles from './Title.module.css'
+
 function Title() {
-  return <h1 className="title">Estitmate</h1>;
+  // const titleStyle = {
+  //   display: 'inline-block',
+  //   flex: '1 1 auto',
+  //   fontWeight: '300',
+  //   textAlign: 'left'
+  // };
+  return <h1 className={styles.title}>Estitmate</h1>;
 }
 
 export default Title;

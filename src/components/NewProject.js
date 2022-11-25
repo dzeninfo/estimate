@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import addProject from '../utils/addProject';
-
+// import { useState } from 'react';
+// import addProject from '../utils/addProject';
+import styles from './NewProject.module.css'
 function NewProject() {
   // const [project, setNewProject] = useState(<div>ddd</div>);
   // const addNewProject = () => {
   //   setNewProject(<div>ttt</div>)
   // }
   const project = (
-    <div className="new-project-wrapper">
+    <div className={styles.wrapper}>
       <h2>test</h2>
     </div>
   );

@@ -1,12 +1,11 @@
-// import { useState } from 'react';
+import styles from './ProjectName.module.css'
 
 function ProjectName(props) {
-  const { classList } = props;
-  // const { placeholderText, setText } = useState('Project Name');
+  const {placeholderText } = props;
 
   return (
     <>
-      <input className={classList} type="text" placeholder="Project Name" />
+      <input className={styles.input} type="text" placeholder={placeholderText} />
     </>
   );
 }

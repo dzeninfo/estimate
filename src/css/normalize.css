@@ -16,7 +16,12 @@ html {
 	padding: 0px;
 	margin: 0px;
 	border: 0px;
-  outline-color: #fdc264;
+  outline-color: rgb(179, 179, 179);
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
 }
 
 /* Sections
@@ -29,6 +34,9 @@ html {
 body {
   margin: 0;
   background-color: rgb(240, 240, 240);
+  font-family: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+  'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+  font-size: 14px;
 }
 
 
@@ -47,7 +55,6 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 /* Grouping content

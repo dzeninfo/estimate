@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+}
+.box:not(:last-child) {
+  /* margin-right: 5px; */
+}
+.lable {
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  font-size: 10px;
+  display: block;
+  background-color: rgb(240, 240, 240);
+}
+.input {
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 5px 5px 5px;
+  font-size: 14px;
+}

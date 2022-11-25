@@ -1,18 +1,26 @@
+import { useState } from 'react';
 import ButtonPlus from './ButtonPlus';
-// import { useState } from 'react';
-// import NewProject from './NewProject';
-import ProjectName from './ProjectName';
 import addProject from '../utils/addProject';
 import Login from './Login';
+import Title from './Title';
+import PersonButton from './PersonButton';
+import styles from './Header.module.css';
 
 function Header() {
+  const [active, setActive] = useState(false);
+  const changeActive = () => {
+    setActive(true);
+  };
+
   return (
-    <header className="header">
+    <header className={styles.header}>
       {/* <Menu /> */}
-      {/* <p className="project-title">Project Name</p> */}
-      <ProjectName classList="project-name-input" placeholder="ProjectName"/>
-      <Login classList="project-name-input" />
-      <ButtonPlus onClick={addProject} classList="button-plus" />
+      <Title />
+      <Login active={active} />
+      <div className={styles.buttons}>
+        <PersonButton onClick={changeActive}/>
+        <ButtonPlus onClick={addProject} classList="button-plus" />
+      </div>
     </header>
   );
 }

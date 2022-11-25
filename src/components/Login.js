@@ -1,22 +1,29 @@
-function Login() {
-  return (
+import styles from './Login.module.css';
+// import { useState } from 'react';
+
+function Login(props) {
+  const {active} = props
+
+  return active? (
     <>
-      <form className="header__form login-form">
-        <div className="login-form__input-box">
-          <label className="login-form__lable">
-            Username
-          </label>
-            <input className="login-form__input" type="text" name="username" />
+      <form className={styles.form}>
+        <div className={styles.box}>
+          <label className={styles.lable}>Username</label>
+          <input className={styles.input} type="text" name="username" />
         </div>
-        <div className="login-form__input-box">
-          <label className="login-form__lable">
-            Password
-          </label>
-            <input className="login-form__input" type="password" name="password" />
+        <div className={styles.box}>
+          <label className={styles.lable}>Password</label>
+          <input
+          className={styles.input}
+            type="password"
+            name="password"
+          />
         </div>
       </form>
     </>
-  );
+  ) : (
+    <div></div>
+  )
 }
 
 export default Login;
