@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
+  justify-content: flex-end;
 }
 .box {
   position: relative;
@@ -9,9 +10,6 @@
   align-items: center;
   border: 1px solid rgb(190, 190, 190);
   border-radius: 5px;
-}
-.box:not(:last-child) {
-  /* margin-right: 5px; */
 }
 .lable {
   position: absolute;

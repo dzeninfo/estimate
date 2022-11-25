@@ -1,9 +1,8 @@
 import NewProject from '../components/NewProject';
 
 function addProject() {
-
-  const container = document.getElementById('app-container');
-  container.append({NewProject});
+  const container = document.getElementById('project');
+  container.append({ NewProject });
 }
 
 export default addProject;

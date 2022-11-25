@@ -9,17 +9,25 @@ import styles from './Header.module.css';
 function Header() {
   const [active, setActive] = useState(false);
   const changeActive = () => {
-    setActive(true);
+    if (active === false) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
   };
 
   return (
     <header className={styles.header}>
+      <div className={styles.logo}>
+        <Title />
+      </div>
+      <div className={styles.login}>
+        <Login active={active} />
+      </div>
       {/* <Menu /> */}
-      <Title />
-      <Login active={active} />
       <div className={styles.buttons}>
-        <PersonButton onClick={changeActive}/>
-        <ButtonPlus onClick={addProject} classList="button-plus" />
+        <PersonButton onClick={changeActive} />
+        <ButtonPlus onClick={addProject} />
       </div>
     </header>
   );

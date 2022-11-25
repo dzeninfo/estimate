@@ -6,14 +6,24 @@
   height: 100px;
   padding: 0px 15px;
   display: flex;
+  gap: 10px;
   /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
   /* background-color: #fff; */
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
-.buttons {
+.logo {
   flex: 0 1 25%;
+}
+.login {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.buttons {
+  flex: 0 1 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
