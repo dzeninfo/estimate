@@ -2,7 +2,9 @@
   text-align: center;
 }
 .container {
-  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1420px;
   margin: 0 auto;
   padding: 0 15px;
 }

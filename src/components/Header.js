@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import ButtonPlus from './ButtonPlus';
-import addProject from '../utils/addProject';
 import Login from './Login';
 import Title from './Title';
 import PersonButton from './PersonButton';
 import styles from './Header.module.css';
 
-function Header() {
+function Header(props) {
   const [active, setActive] = useState(false);
   const changeActive = () => {
     if (active === false) {
@@ -27,7 +25,6 @@ function Header() {
       {/* <Menu /> */}
       <div className={styles.buttons}>
         <PersonButton onClick={changeActive} />
-        <ButtonPlus onClick={addProject} />
       </div>
     </header>
   );

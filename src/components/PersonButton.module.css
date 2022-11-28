@@ -5,6 +5,7 @@
 	overflow: hidden;
   border-radius: 50%;
   border: 3px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .icon::before {
   content: '';
