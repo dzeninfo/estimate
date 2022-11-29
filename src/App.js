@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import TableDescription from './components/TableDescription';
-import Project from './components/Project';
+import Table from './components/Table';
+import Project from './components/Project/Project';
 import styles from './App.module.css';
 
 function App() {
@@ -17,14 +17,14 @@ function App() {
     <div className={styles.App}>
       <Header />
       <div id="project" className={styles.container}>
-        <TableDescription
+        <Table
           addProject={addProjectHandler}
           addProjectName={addProjectNameHandler}
         />
-        <div>
+        <>
           <h1>{projectName}</h1>
           <div>{project}</div>
-        </div>
+        </>
       </div>
     </div>
   );

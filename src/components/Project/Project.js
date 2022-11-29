@@ -1,8 +1,12 @@
 import styles from './Project.module.css';
+import Top from './Top';
 function Project(props) {
   return (
     <div className={styles.wrapper}>
-      <h2>test</h2>
+      <Top />
+      <div className={styles.section}>
+        
+      </div>
     </div>
   );
 }

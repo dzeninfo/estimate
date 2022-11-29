@@ -8,3 +8,17 @@
   margin: 0 auto;
   padding: 0 15px;
 }
+@media (max-width: 500px) {
+  .container {
+  padding: 0 5px;
+
+  }
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

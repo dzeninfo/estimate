@@ -1,14 +1,14 @@
 import ButtonPlus from './ButtonPlus';
 // import ProjectName from './ProjectName';
-import styles from './TableDescription.module.css';
+import styles from './Table.module.css';
 import { useState } from 'react';
 
-function TableDescription(props) {
+function Table(props) {
   const { addProject, addProjectName } = props;
   const [text, setText] = useState('');
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    addProjectName(text)
+    addProjectName(text);
     setText('');
   };
   return (
@@ -21,15 +21,10 @@ function TableDescription(props) {
           placeholder="Enter project name"
           onChange={(e) => setText(e.target.value)}
         />
-        {/* <ProjectName
-          placeholderText="Enter project name"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        /> */}
         <ButtonPlus onClick={addProject} />
       </form>
     </section>
   );
 }
 
-export default TableDescription;
+export default Table;
