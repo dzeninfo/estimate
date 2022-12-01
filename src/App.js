@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header';
-import Table from './components/Table';
-import Project from './components/Project/Project';
+import TableButtons from './components/TableButtons';
+import Project from './components/Projects/Project';
 import styles from './App.module.css';
+import ProjectsList from './components/Projects/ProjectsList';
 
 function App() {
-  const [project, setProject] = useState('');
+  const [projects, setProjects] = useState([]);
   const addProjectHandler = () => {
-    setProject(<Project />);
+
+    setProjects([...projects, <Project />]);
   };
   const [projectName, setProjectName] = useState('');
   const addProjectNameHandler = (text) => {
@@ -17,13 +20,15 @@ function App() {
     <div className={styles.App}>
       <Header />
       <div id="project" className={styles.container}>
-        <Table
+        <TableButtons
           addProject={addProjectHandler}
           addProjectName={addProjectNameHandler}
         />
+        <ProjectsList projects={projects}/>
+        {/* <Project /> */}
         <>
           <h1>{projectName}</h1>
-          <div>{project}</div>
+          <div>{projects}</div>
         </>
       </div>
     </div>

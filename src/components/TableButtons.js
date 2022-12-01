@@ -1,9 +1,10 @@
 import ButtonPlus from './ButtonPlus';
 // import ProjectName from './ProjectName';
-import styles from './Table.module.css';
+import styles from './TableButtons.module.css';
 import { useState } from 'react';
+import ChapterButton from './UI/ChapterButton';
 
-function Table(props) {
+function TableButtons(props) {
   const { addProject, addProjectName } = props;
   const [text, setText] = useState('');
   const onSubmitHandler = (event) => {
@@ -13,7 +14,7 @@ function Table(props) {
   };
   return (
     <section className={styles.container}>
-      <form className={styles.form} onSubmit={onSubmitHandler}>
+      <form className={styles.formName} onSubmit={onSubmitHandler}>
         <input
           className={styles.input}
           type="text"
@@ -21,10 +22,11 @@ function Table(props) {
           placeholder="Enter project name"
           onChange={(e) => setText(e.target.value)}
         />
-        <ButtonPlus onClick={addProject} />
+        <ButtonPlus title="Add Project Name" onClick={addProject} />
       </form>
+      <ChapterButton title="Add chapter"/>
     </section>
   );
 }
 
-export default Table;
+export default TableButtons;

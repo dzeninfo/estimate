@@ -20,7 +20,7 @@ function Top() {
           <div className={styles.item}>
             <span className={styles.bg}>cost</span>
           </div>
-          <div className={styles.df}>
+          <div className={styles.row}>
             <div className={styles.item}>per unit</div>
             <div className={styles.item}>overall</div>
           </div>

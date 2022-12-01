@@ -4,7 +4,7 @@
   justify-content: center;
   background-color: rgba(179, 219, 216, 0.9);
 }
-.df {
+.row {
   display: flex;
   justify-content: space-around;
 }
@@ -14,7 +14,7 @@
   justify-content: center;
   height: 40px;
   padding: 5px;
-  border: 1px solid rgb(240, 240, 240);
+  border: 1px solid rgb(255, 255, 255);
   text-transform: capitalize;
   @media (max-width: 500px) {
   }
@@ -60,5 +60,6 @@
 .bg {
   display: inline-block;
   width: 100%;
-  background-color: rgb(240, 240, 240);
+  /* background-color: rgb(240, 240, 240); */
+  border-bottom: 2px solid rgb(255, 255, 255);
 }

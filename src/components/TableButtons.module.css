@@ -1,11 +1,14 @@
 .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   text-align: left;
   padding-top: 120px;
   padding-bottom: 20px;
   margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.form {
+.formName {
   display: inline-flex;
   gap: 30px;
   padding: 5px 15px;
@@ -29,7 +32,7 @@
     padding: 10px 0;
     height: 30px;
   }
-  .form {
+  .formName {
     gap: 10px;
   }
 }
