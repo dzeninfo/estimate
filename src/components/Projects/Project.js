@@ -6,13 +6,15 @@ import Top from './Top';
 import ChaptersList from './ChaptersList';
 
 function Project(props) {
-  const {project} = props
-  const { chapters, setChapters } = useState([]);
+  // const {project} = props
+  const [ chapters, setChapters ] = useState([<Chapter />]);
+  console.log(chapters);
+  
 
-  const addChapterHandler = (chap) => {
+  const addChaptersHandler = () => {
     const newChapter = {
-      chap: chap,
-      hasChapter: true,
+      // w: <Chapter />,
+      // hasChapter: true,
       id: uuidv4(),
     };
     setChapters([...chapters, newChapter]);
@@ -22,7 +24,7 @@ function Project(props) {
     <div className={styles.wrapper}>
       <Top />
       {/* <Chapter /> */}
-      <ChaptersList chapters={chapters} addChapter={addChapterHandler} />
+      <ChaptersList chapters={chapters} addChapters={addChaptersHandler}/>
     </div>
   );
 }

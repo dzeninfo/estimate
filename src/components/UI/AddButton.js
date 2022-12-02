@@ -1,15 +1,15 @@
 import { MdAddBox } from 'react-icons/md';
-import styles from './ChapterButton.module.css';
-function ChapterButton(props) {
-	const {title, onClick} = props
+import styles from './AddButton.module.css'
+function AddButton(props) {
+	const {title, onClick, text} = props
   return (
     <>
       <div className={styles.button} onClick={onClick} title={title}>
         <MdAddBox className={styles.icon}/>
-        chapter
+        {text}
       </div>
     </>
   );
 }
 
-export default ChapterButton;
+export default AddButton;

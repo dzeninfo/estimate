@@ -4,11 +4,11 @@ import {
   MdArrowDownward,
   MdAddBox,
 } from 'react-icons/md';
-import ChapterButton from '../UI/ChapterButton';
+import AddButton from '../UI/AddButton';
 import styles from './Chapter.module.css';
 
 function Chapter(props) {
-  const {chapter, addChapter} = props
+  const {chapter, addChapters} = props
   return (
     <>
       <div className={styles.chapter}>
@@ -27,11 +27,8 @@ function Chapter(props) {
             />
           </div>
           <div className={styles.row}>
-            <ChapterButton onClick={addChapter} chapter={chapter}/>
-            <div className={styles.addButton}>
-              <MdAddBox className={styles.icon} />
-              item
-            </div>
+            <AddButton title='Add new Chapter' text='Chapter' onClick={addChapters}/>
+            <AddButton title='Add new item' text='Item'/>
             <MdArrowUpward className={styles.icon} />
             <MdArrowDownward className={styles.icon} />
             <MdDeleteForever className={styles.icon} />

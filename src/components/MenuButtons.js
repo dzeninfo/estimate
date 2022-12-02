@@ -1,11 +1,11 @@
 import ButtonPlus from './ButtonPlus';
 // import ProjectName from './ProjectName';
-import styles from './TableButtons.module.css';
+import styles from './MenuButtons.module.css';
 import { useState } from 'react';
-import ChapterButton from './UI/ChapterButton';
+import AddButton from './UI/AddButton';
 
-function TableButtons(props) {
-  const { addProject, addProjectName } = props;
+function MenuButtons(props) {
+  const { addProjects, addProjectName } = props;
   const [text, setText] = useState('');
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -22,11 +22,12 @@ function TableButtons(props) {
           placeholder="Enter project name"
           onChange={(e) => setText(e.target.value)}
         />
-        <ButtonPlus title="Add Project Name" onClick={addProject} />
+        <ButtonPlus title="Add Project Name" />
       </form>
-      <ChapterButton title="Add chapter"/>
+      <AddButton text="Project" title="Add new project" onClick={addProjects} />
+      <AddButton text="Chapter" title="Add new chapter"/>
     </section>
   );
 }
 
-export default TableButtons;
+export default MenuButtons;
