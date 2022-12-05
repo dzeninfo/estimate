@@ -3,15 +3,25 @@ import Chapter from './Chapter';
 import styles from './ChaptersList.module.css';
 
 function ChaptersList(props) {
-  const { chapters, addChapters } = props;
+  const { chapters, addChapters, deleteChapters } = props;
   console.log(chapters);
 
   return (
     <div className={styles.container}>
-      {/* <Chapter /> */}
-      {chapters.length === 0 && <AddButton addChapters={addChapters}/>}
+      {chapters.length === 0 && (
+        <AddButton
+          onClick={addChapters}
+          text="Chapter"
+          title="Add new Chapter"
+        />
+      )}
       {chapters.map((chapter) => (
-        <Chapter key={chapter.id} addChapters={addChapters}/>
+        <Chapter
+          chapter={chapter}
+          key={chapter.id}
+          addChapters={addChapters}
+          deleteChapters={deleteChapters}
+        />
       ))}
     </div>
   );

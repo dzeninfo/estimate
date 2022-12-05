@@ -7,9 +7,8 @@ import ChaptersList from './ChaptersList';
 
 function Project(props) {
   // const {project} = props
-  const [ chapters, setChapters ] = useState([<Chapter />]);
-  console.log(chapters);
-  
+  const [chapters, setChapters] = useState([]);
+  // console.log(chapters);
 
   const addChaptersHandler = () => {
     const newChapter = {
@@ -20,11 +19,20 @@ function Project(props) {
     setChapters([...chapters, newChapter]);
   };
 
+  const deleteChaptersHandler = (id) => {
+    setChapters(chapters.filter((chapter) => chapter.id !== id));
+    // setChapters([]);
+  };
+
   return (
     <div className={styles.wrapper}>
       <Top />
       {/* <Chapter /> */}
-      <ChaptersList chapters={chapters} addChapters={addChaptersHandler}/>
+      <ChaptersList
+        chapters={chapters}
+        addChapters={addChaptersHandler}
+        deleteChapters={deleteChaptersHandler}
+      />
     </div>
   );
 }

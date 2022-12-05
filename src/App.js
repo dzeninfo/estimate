@@ -14,7 +14,7 @@ function App() {
       // project: <Project />,
       id: uuidv4(),
     };
-    setProjects([...projects, newProject]);
+    setProjects([newProject]);
   };
 
   const [projectName, setProjectName] = useState('');

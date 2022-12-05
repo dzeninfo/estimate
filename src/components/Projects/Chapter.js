@@ -8,7 +8,8 @@ import AddButton from '../UI/AddButton';
 import styles from './Chapter.module.css';
 
 function Chapter(props) {
-  const {chapter, addChapters} = props
+  const { chapter, addChapters, deleteChapters } = props;
+  console.log(chapter)
   return (
     <>
       <div className={styles.chapter}>
@@ -27,11 +28,18 @@ function Chapter(props) {
             />
           </div>
           <div className={styles.row}>
-            <AddButton title='Add new Chapter' text='Chapter' onClick={addChapters}/>
-            <AddButton title='Add new item' text='Item'/>
+            <AddButton
+              title="Add new Chapter"
+              text="Chapter"
+              onClick={addChapters}
+            />
+            <AddButton title="Add new item" text="Item" />
             <MdArrowUpward className={styles.icon} />
             <MdArrowDownward className={styles.icon} />
-            <MdDeleteForever className={styles.icon} />
+            <MdDeleteForever
+              className={styles.icon}
+              onClick={() => deleteChapters(chapter.id)}
+            />
           </div>
         </div>
       </div>
