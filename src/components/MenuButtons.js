@@ -25,7 +25,7 @@ function MenuButtons(props) {
         <ButtonPlus title="Add Project Name" />
       </form>
       <AddButton text="Project" title="Add new project" onClick={addProjects} />
-      <AddButton text="Chapter" title="Add new chapter"/>
+      <AddButton text="Chapter" title="Add new chapter" onClick={addProjects}/>
     </section>
   );
 }

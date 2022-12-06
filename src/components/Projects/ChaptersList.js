@@ -4,7 +4,6 @@ import styles from './ChaptersList.module.css';
 
 function ChaptersList(props) {
   const { chapters, addChapters, deleteChapters } = props;
-  console.log(chapters);
 
   return (
     <div className={styles.container}>
@@ -15,8 +14,9 @@ function ChaptersList(props) {
           title="Add new Chapter"
         />
       )}
-      {chapters.map((chapter) => (
+      {chapters.map((chapter, index) => (
         <Chapter
+          index={index}
           chapter={chapter}
           key={chapter.id}
           addChapters={addChapters}
