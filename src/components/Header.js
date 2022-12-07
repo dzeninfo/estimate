@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Login from './Login';
-import Title from './Title';
-import PersonButton from './PersonButton';
+import Title from './Logo';
+import PersonButton from './UI/PersonButton';
 import styles from './Header.module.css';
 
 function Header(props) {

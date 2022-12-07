@@ -16,6 +16,7 @@ function Project(props) {
     setChapters([...chapters, newChapter]);
   };
 
+//delete chapter item
   const deleteChaptersHandler = (id) => {
     setChapters(chapters.filter((chapter) => chapter.id !== id));
   };

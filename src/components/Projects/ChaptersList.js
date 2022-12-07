@@ -10,7 +10,7 @@ function ChaptersList(props) {
       {chapters.length === 0 && (
         <AddButton
           onClick={addChapters}
-          text="Chapter"
+          textOnButton="Chapter"
           title="Add new Chapter"
         />
       )}

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header';
-import MenuButtons from './components/MenuButtons';
-import Project from './components/Projects/Project';
+import MenuButtons from './components/UI/MenuButtons';
 import styles from './App.module.css';
 import ProjectsList from './components/Projects/ProjectsList';
 
@@ -17,7 +16,7 @@ function App() {
     setProjects([newProject]);
   };
 
-  const [projectName, setProjectName] = useState('');
+  const [projectName, setProjectName] = useState('New project');
   const addProjectNameHandler = (text) => {
     setProjectName(text);
   };

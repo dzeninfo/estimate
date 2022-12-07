@@ -14,14 +14,21 @@ import styles from './Chapter.module.css';
 
 function Chapter(props) {
   const { chapter, addChapters, deleteChapters, index } = props;
-  const [expenses, setExpenses] = useState([]);
 
+  const [expenses, setExpenses] = useState([]);
   const addExpensesHandler = () => {
     const newExpense = {
       id: uuidv4(),
     };
     setExpenses([...expenses, newExpense]);
   };
+
+  const [chapterName, setChapterName] = useState('');
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    setChapterName(chapterName);
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -31,24 +38,26 @@ function Chapter(props) {
           </div>
           <div className={styles.column}>
             <div className={styles.block}>
-              <div className={styles.title}>
-              Chapter:
-              </div>
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="New chapter"
-              />
+              <div className={styles.title}>Chapter:</div>
+              <form className={styles.form} onSubmit={onSubmitHandler}>
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder="Enter chapter name"
+                  value={chapterName}
+                  onChange={(e) => setChapterName(e.target.value)}
+                />
+              </form>
             </div>
             <div className={styles.row}>
               <AddButton
                 title="Add new Chapter"
-                text="Chapter"
+                textOnButton="Chapter"
                 onClick={addChapters}
               />
               <AddButton
                 title="Add new Expense"
-                text="Item"
+                textOnButton="Item"
                 onClick={addExpensesHandler}
               />
               <MdArrowUpward className={styles.icon} />
@@ -62,12 +71,16 @@ function Chapter(props) {
         </div>
         <details open className={styles.container}>
           <summary className={styles.summary}>
-            <MdKeyboardArrowDown className={`${styles.icon} ${styles.totalColumn}`}/>
-            <h4 className={styles.totalColumn}>Total for the Section "Earthworks":</h4>
+            <MdKeyboardArrowDown
+              className={`${styles.icon} ${styles.totalColumn}`}
+            />
+            <h4 className={styles.totalColumn}>
+              Total for the Section "
+              {chapterName === '' ? 'New chapter' : chapterName}":
+            </h4>
             <div className={styles.totalColumn}>30000</div>
           </summary>
-
-        <ExpensesList expenses={expenses}/>
+          <ExpensesList expenses={expenses} />
         </details>
       </div>
     </>
