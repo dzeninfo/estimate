@@ -4,8 +4,6 @@ import {
   MdDeleteForever,
   MdArrowUpward,
   MdArrowDownward,
-  MdVisibility,
-  MdArrowDropDownCircle,
   MdKeyboardArrowDown,
 } from 'react-icons/md';
 import AddButton from '../UI/AddButton';
@@ -78,9 +76,9 @@ function Chapter(props) {
               Total for the Section "
               {chapterName === '' ? 'New chapter' : chapterName}":
             </h4>
-            <div className={styles.totalColumn}>30000</div>
+            <span className={styles.totalColumn}>30000</span>
           </summary>
-          <ExpensesList expenses={expenses} />
+          <ExpensesList expenses={expenses} addExpenses={addExpensesHandler} chapterIndex={index}/>
         </details>
       </div>
     </>

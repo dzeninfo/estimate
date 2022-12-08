@@ -8,7 +8,10 @@ function Top() {
           <div className={styles.item}>#</div>
         </div>
         <div className={styles.column}>
-          <div className={styles.item}>Cost item</div>
+          <div className={styles.item}>Item</div>
+        </div>
+        <div className={styles.column}>
+          <div className={styles.item}>Where buy</div>
         </div>
         <div className={styles.column}>
           <div className={styles.item}>Qty</div>
@@ -24,9 +27,6 @@ function Top() {
             <div className={styles.item}>per unit</div>
             <div className={styles.item}>overall</div>
           </div>
-        </div>
-        <div className={styles.column}>
-          <div className={styles.item}>Where buy</div>
         </div>
       </div>
     </>
