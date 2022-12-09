@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.icon {
+	width: 20px;
+	height: 20px;
+  color: #a8d1e7;
+}
+.icon:hover {
+  color: #566c78;
+}

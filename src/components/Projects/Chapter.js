@@ -7,8 +7,9 @@ import {
   MdKeyboardArrowDown,
 } from 'react-icons/md';
 import AddButton from '../UI/AddButton';
-import ExpensesList from './ExpensesList';
 import styles from './Chapter.module.css';
+import DeleteButton from '../UI/DeleteButton';
+import ExpensesList from './Expenses/ExpensesList';
 
 function Chapter(props) {
   const { chapter, addChapters, deleteChapters, index } = props;
@@ -19,6 +20,10 @@ function Chapter(props) {
       id: uuidv4(),
     };
     setExpenses([...expenses, newExpense]);
+  };
+
+  const deleteExpensesHandler = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
   };
 
   const [chapterName, setChapterName] = useState('');
@@ -60,10 +65,9 @@ function Chapter(props) {
               />
               <MdArrowUpward className={styles.icon} />
               <MdArrowDownward className={styles.icon} />
-              <MdDeleteForever
-                className={styles.icon}
-                onClick={() => deleteChapters(chapter.id)}
-              />
+              <div onClick={() => deleteChapters(chapter.id)}>
+                <DeleteButton title="Delete Chapter" />
+              </div>
             </div>
           </div>
         </div>
@@ -78,7 +82,12 @@ function Chapter(props) {
             </h4>
             <span className={styles.totalColumn}>30000</span>
           </summary>
-          <ExpensesList expenses={expenses} addExpenses={addExpensesHandler} chapterIndex={index}/>
+          <ExpensesList
+            expenses={expenses}
+            addExpenses={addExpensesHandler}
+            chapterIndex={index}
+            deleteExpenses={deleteExpensesHandler}
+          />
         </details>
       </div>
     </>
