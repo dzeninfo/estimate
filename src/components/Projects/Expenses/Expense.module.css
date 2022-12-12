@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   height: 40px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   @media (max-width: 500px) {
   }
 }
@@ -77,4 +77,22 @@
   width: 100%;
   padding: 5px;
   border-radius: 5px;
+}
+.quantityInput {
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+.unitInput {
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+.perUnitInput {
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 5px;
+  text-align: center;
 }
