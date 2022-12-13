@@ -3,7 +3,7 @@ import AddButton from './../../UI/AddButton';
 
 
 function ExpensesList(props) {
-  const { expenses, addExpenses, chapterIndex, deleteExpenses } = props;
+  const { expenses, addExpenses, chapterIndex, deleteExpenses, defaultGroup, onChange, group, setGroup } = props;
   return (
     <>
       {/* {expenses.length === 0 && (
@@ -20,6 +20,11 @@ function ExpensesList(props) {
           chapterIndex={chapterIndex}
           deleteExpenses={deleteExpenses}
           expense={expense}
+          expenses={expenses}
+          defaultGroup={defaultGroup}
+          onChange={onChange}
+          group={group}
+          setGroup={setGroup}
         />
       ))}
       <AddButton

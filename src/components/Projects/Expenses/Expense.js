@@ -4,18 +4,57 @@ import DeleteButton from './../../UI/DeleteButton';
 import styles from './Expense.module.css';
 
 function Expense(props) {
-  const { index, chapterIndex, deleteExpenses, expense } = props;
+  const {
+    index,
+    chapterIndex,
+    deleteExpenses,
+    expense,
+    expenses,
+    // defaultGroup,
+    // group,
+    // onChange
+  } = props;
+  // console.log(expenses);
 
-  const [quntity, setQuantity] = useState(0);
-  const [costPerUnit, setCostPerUnit] = useState(0);
-  const [total, setTotal] = useState(0);
+  const defaultGroup = expenses.map((i) => ({
+    g1: 0,
+    g2: 0,
+  }));
+  console.log(defaultGroup);
+  const [group, setGroup] = useState(defaultGroup);
+  console.log(group);
+
+  const onChange = (type, value, index) => {
+    const newGroup = group.map((g, idx) => {
+      if (index === idx)
+        return {
+          ...g,
+          [type]: parseInt(value || 0),
+        };
+      return g;
+    });
+    setGroup(newGroup);
+    // console.log(newGroup);
+  };
+
+  // const total = group[index].g1 * group[index].g2;
+
+  // const total = group.reduce((acc, cur) => {
+  //   acc += cur.g1 + cur.g2;
+  //   return acc;
+  // }, 0);
+  // console.log(total);
+
+  // const [quntity, setQuantity] = useState(0);
+  // const [costPerUnit, setCostPerUnit] = useState(0);
+  // const [total, setTotal] = useState(0);
   // const total = group.reduce((acc, cur) => {
   //   acc += cur.g1 + cur.g2 + cur.g3;
   //   return acc;
   // }, 0);
-  const calculate = () => {
-    setTotal(quntity*costPerUnit);
-  }
+  // const calculate = () => {
+  //   setTotal(quntity*costPerUnit);
+  // }
 
   return (
     <div className={styles.container}>
@@ -46,8 +85,9 @@ function Expense(props) {
             <input
               className={styles.quantityInput}
               type="number"
-              value={quntity}
-              onChange={(e) => setQuantity(+e.target.value)}
+              name={`g1-${index + 1}`}
+              defaultValue={group[index].g1}
+              onChange={(e) => onChange('g1', e.target.value, index)}
               placeholder="0"
             />
           </div>
@@ -63,12 +103,15 @@ function Expense(props) {
               <input
                 className={styles.perUnitInput}
                 type="number"
-                value={costPerUnit}
-                onChange={(e) => setCostPerUnit(+e.target.value)}
+                name={`g2-${index + 1}`}
+                defaultValue={group[index].g2}
+                onChange={(e) => onChange('g2', e.target.value, index)}
                 placeholder="0"
               />
             </div>
-            <div className={styles.item}>{total}</div>
+            <div className={styles.item}>
+              {group[index].g1 * group[index].g2}
+            </div>
           </div>
         </div>
       </div>

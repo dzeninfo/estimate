@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import {
-  MdDeleteForever,
   MdArrowUpward,
   MdArrowDownward,
   MdKeyboardArrowDown,
@@ -10,6 +9,7 @@ import AddButton from '../UI/AddButton';
 import styles from './Chapter.module.css';
 import DeleteButton from '../UI/DeleteButton';
 import ExpensesList from './Expenses/ExpensesList';
+// import Expense from './Expenses/Expense';
 
 function Chapter(props) {
   const { chapter, addChapters, deleteChapters, index } = props;
@@ -25,6 +25,35 @@ function Chapter(props) {
   const deleteExpensesHandler = (id) => {
     setExpenses(expenses.filter((expense) => expense.id !== id));
   };
+
+  // const defaultGroup = expenses.map((i) => ({
+  //   g1: 0,
+  //   g2: 0,
+  // }));
+  // console.log(defaultGroup);
+
+  // const [group, setGroup] = useState(defaultGroup);
+  // // console.log(group[0]);
+
+  // const onChange = (type, value, index) => {
+  //   const newGroup = group.map((g, idx) => {
+  //     if (index === idx)
+  //       return {
+  //         ...g,
+  //         [type]: parseInt(value || 0),
+  //       };
+  //     return g;
+  //   });
+  //   setGroup(newGroup);
+  //   // console.log(newGroup);
+  // };
+  // console.log(group ? 0 : (group[index].g1 * group[index].g2));
+  
+  // const total = group.reduce((acc, cur) => {
+  //   acc += cur.g1 + cur.g2;
+  //   return acc;
+  // }, 0);
+  // console.log(total);
 
   const [chapterName, setChapterName] = useState('');
   const onSubmitHandler = (event) => {
@@ -80,13 +109,17 @@ function Chapter(props) {
               Total for the Section "
               {chapterName === '' ? 'New chapter' : chapterName}":
             </h4>
-            <span className={styles.totalColumn}>30000</span>
+            <span className={styles.totalColumn}>0</span>
           </summary>
           <ExpensesList
             expenses={expenses}
             addExpenses={addExpensesHandler}
             chapterIndex={index}
             deleteExpenses={deleteExpensesHandler}
+            // defaultGroup={defaultGroup}
+            // onChange={onChange}
+            // group={group}
+            // setGroup={setGroup}
           />
         </details>
       </div>
